@@ -71,7 +71,7 @@ const Layanan: React.FC = () => {
             {listService.map((item, index) => (
               <div
                 key={index}
-                className="bg-white p-6 rounded-lg shadow-sm w-[350px] md:w-[350px] md:h-[300px] lg:w-[380px] 2xl:w-[500px] transition-all ease-in-out duration-500 hover:shadow-xl mx-auto group cursor-pointer border hover:border hover:border-blue-400"
+                className="bg-white p-6 rounded-lg shadow-sm w-[350px] md:w-[350px] md:h-[300px] lg:w-[380px] 2xl:w-[500px] transition-all ease-in-out duration-500 hover:shadow-xl mx-auto group cursor-pointer border hover:border-2 hover:border-blue-400"
                 data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
               >
                 <div className="flex flex-col mb-4">
