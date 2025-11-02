@@ -42,7 +42,7 @@ const Navbar: React.FC = () => {
     <>
       <nav
         className={`w-full flex justify-between items-center py-4 px-4 md:py-6 md:px-20 lg:px-42 fixed top-0 left-0 right-0 z-50 shadow-sm ${
-          isScrolled ? "bg-body shadow-md" : "bg-body"
+          isScrolled ? "bg-body/70 backdrop-blur-xl shadow-md" : "bg-body"
         }`}
       >
         {/* Logo */}

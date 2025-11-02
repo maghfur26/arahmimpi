@@ -10,7 +10,7 @@ const ArrowScroll: React.FC = () => {
 
     return (
         <button
-            className={`cursor-pointer fixed bottom-10 right-10 z-50 bg-main text-black p-4 rounded-full shadow-lg transition-all ease-in-out duration-300 hover:bg-main/80 ${
+            className={`cursor-pointer fixed bottom-10 right-10 z-50 bg-main border-black/10 border text-black/40 p-4 rounded-full shadow-lg transition-all ease-in-out duration-300 hover:bg-main/80 ${
                 isScrolling ? "opacity-100 scale-100" : "opacity-0 scale-75 pointer-events-none"
             }`}
             onClick={handleScrollToTop}

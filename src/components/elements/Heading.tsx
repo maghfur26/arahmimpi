@@ -2,7 +2,7 @@ type Props = {
   section: string;
   bgColor: string;
   title: string;
-  desc1: string;
+  desc1?: string;
   desc2?: string;
   textColor: string;
 };
@@ -25,14 +25,14 @@ const Heading = (props: Props) => {
         {props.title}
       </h1>
       <p
-        className="text-md md:text-lg lg:text-xl font-thin text-desc md:leading-8 font-roboto mb-4 md:text-center"
+        className="text-md md:text-lg lg:text-xl font-thin text-desc md:leading-8 font-roboto mb-4 text-center"
         data-aos="fade-up"
         data-aos-duration="1000"
       >
         {props.desc1}
       </p>
       <p
-        className="text-md md:text-lg lg:text-xl font-thin text-desc md:leading-8 font-roboto md:text-center"
+        className="text-md md:text-lg lg:text-xl font-thin text-desc md:leading-8 font-roboto text-center"
         data-aos="fade-up"
         data-aos-duration="1000"
       >

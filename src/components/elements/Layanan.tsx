@@ -9,6 +9,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import WhyWeOffer from "./WhyWeOffer";
 
 interface ListService {
   icon: React.ReactNode;
@@ -55,45 +56,50 @@ const Layanan: React.FC = () => {
       className="bg-main py-10 px-4 md:px-10 lg:px-10 2xl:px-32"
       id="service"
     >
-      <header className="mx-4">
-        <Heading
-          title="Apa yang Kami Tawarkan"
-          desc1="Layanan pengembangan web komprehensif untuk mewujudkan visi Anda"
-          section="Layanan Kami"
-          bgColor="bg-[#cfe0f7]"
-          textColor="text-blue-600"
-        />
-      </header>
-      <section>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 place-items-center mt-4">
-          {listService.map((item, index) => (
-            <div
-              key={index}
-              className="bg-white p-6 rounded-lg shadow-sm w-[350px] md:w-[350px] md:h-[300px] lg:w-[380px] 2xl:w-[500px] transition-all ease-in-out duration-500 hover:shadow-xl mx-auto group cursor-pointer border hover:border hover:border-blue-400"
-              data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
-            >
-              <div className="flex flex-col mb-4">
-                <div className="bg-gradient px-4 w-fit py-4 rounded-xl mb-4  group-hover:scale-110 transition-all ease-in-out duration-500">
-                  {item.icon}
-                </div>
-                <h2 className="text-lg font-semibold text-black font-roboto group-hover:text-blue-600 transition-all ease-in-out duration-500">
-                  {item.title}
-                </h2>
-              </div>
-              <p className="text-gray-600 mb-4 font-roboto">{item.desc}</p>
-              <Link
-                className="text-blue-500 flex gap-2 hover:text-blue-700 w-fit font-roboto group-hover:transform group-hover:translate-x-1 transition-all ease-in-out duration-500"
-                to={"#"}
+      <div>
+        <header className="mx-4">
+          <Heading
+            title="Apa Yang Kami Tawarkan"
+            desc1="Layanan pengembangan web komprehensif untuk mewujudkan visi Anda"
+            section="Layanan Kami"
+            bgColor="bg-[#cfe0f7]"
+            textColor="text-blue-600"
+          />
+        </header>
+        <section>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 place-items-center mt-4">
+            {listService.map((item, index) => (
+              <div
+                key={index}
+                className="bg-white p-6 rounded-lg shadow-sm w-[350px] md:w-[350px] md:h-[300px] lg:w-[380px] 2xl:w-[500px] transition-all ease-in-out duration-500 hover:shadow-xl mx-auto group cursor-pointer border hover:border hover:border-blue-400"
+                data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
               >
-                <span>Learn More</span>
-                <span>
-                  <ArrowRight />
-                </span>
-              </Link>
-            </div>
-          ))}
-        </div>
-      </section>
+                <div className="flex flex-col mb-4">
+                  <div className="bg-gradient px-4 w-fit py-4 rounded-xl mb-4  group-hover:scale-110 transition-all ease-in-out duration-500">
+                    {item.icon}
+                  </div>
+                  <h2 className="text-lg font-semibold text-black font-roboto group-hover:text-blue-600 transition-all ease-in-out duration-500">
+                    {item.title}
+                  </h2>
+                </div>
+                <p className="text-gray-600 mb-4 font-roboto">{item.desc}</p>
+                <Link
+                  className="text-blue-500 flex gap-2 hover:text-blue-700 w-fit font-roboto group-hover:transform group-hover:translate-x-1 transition-all ease-in-out duration-500"
+                  to={"#"}
+                >
+                  <span>Learn More</span>
+                  <span>
+                    <ArrowRight />
+                  </span>
+                </Link>
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
+      <div className="mt-20">
+        <WhyWeOffer />
+      </div>
     </div>
   );
 };
