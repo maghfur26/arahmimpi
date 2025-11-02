@@ -6,9 +6,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 @theme{
-    --color-main: #D9FB06;
-    --color-body: #1b1d1c;
-    --color-card: #302F2C;
+    --color-main: #e5eefc;
+    --color-blue: #DBEAFE;
+    --color-gradient: linear-gradient(90deg,#2070E7 0%, #239AE7 50%, #0AB2D6 100%);
+    --color-body: #FAFCFE;
+    --color-card: #FCFDFF;
     --color-desc: #7A7973;
     --font-poppins: 'Poppins', sans-serif;
     --font-roboto: 'Roboto', sans-serif;
@@ -22,6 +24,9 @@ html {
     scroll-behavior: smooth;
 }
 
+.bg-gradient {
+  background: var(--color-gradient);
+}
 
 @keyframes zoomin {
     0% {

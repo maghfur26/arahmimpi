@@ -5,11 +5,11 @@ import Layanan from "../components/elements/Layanan";
 
 const HomePages: React.FC = () => {
   return (
-    <div className="overflow-hidden relative" >
-      <section className="h-dvh overflow-hidden">
+    <div className="overflow-hidden relative " >
+      <section>
         <Hero />
       </section>
-      <section className="pb-10">
+      <section>
         <About />
       </section>
       <section>

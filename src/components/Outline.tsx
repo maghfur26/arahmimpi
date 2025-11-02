@@ -7,7 +7,7 @@ const Outline: React.FC = () => {
       <header>
         <Navbar />
       </header>
-      <main className="pt-20 md:pt-28 pb-6">
+      <main className="pt-18 md:pt-18 pb-6">
         <Outlet />
       </main>
     </>

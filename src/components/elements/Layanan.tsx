@@ -1,123 +1,95 @@
-import Card from "./Card";
 import Heading from "./Heading";
-import { Check } from "lucide-react";
+import {
+  Building,
+  ShoppingCart,
+  PanelsTopLeft,
+  Newspaper,
+  BookImage,
+  ChevronsLeftRight,
+  ArrowRight,
+} from "lucide-react";
+import { Link } from "react-router-dom";
+
+interface ListService {
+  icon: React.ReactNode;
+  title: string;
+  desc: string;
+}
 
 const Layanan: React.FC = () => {
-  const listLayanan = [
+  const listService: ListService[] = [
     {
-      heading: "company profile",
-      desc: "Membuat website profile perusahaan yang menarik dan profesional",
-      price: "Rp 2.000.000 - Rp 5.000.000",
-      features: [
-        "Desain Custom",
-        "Responsive Design",
-        "Contact Form",
-        "Google Maps",
-        "Admin Panel",
-        "Dll",
-      ],
+      icon: <Building />,
+      title: "Company Profile",
+      desc: "Situs web perusahaan profesional yang membangun kehadiran digital merek Anda dengan desain elegan dan konten yang menarik.",
     },
     {
-      heading: "e-commerce",
-      desc: "Toko online lengkap dengan sistem pembayaran",
-      price: "Rp 8.000.000 - Rp 20.000.000",
-      features: [
-        "Desain Custom",
-        "Payment Gateway",
-        "Shoping Cart",
-        "Order Management",
-        "Product Management",
-        "Custom Dashboard",
-        "Dll",
-      ],
+      icon: <ShoppingCart />,
+      title: "E-Commerce",
+      desc: "Platform e-commerce tangguh yang membantu bisnis Anda berkembang dengan cepat dan memperluas pasar.",
     },
     {
-      heading: "landing page",
-      desc: "Halaman promosi yang menarik dan konversi tinggi",
-      price: "Rp 1.500.000 - Rp 4.000.000",
-      features: [
-        "Single Page Design",
-        "Call to Action",
-        "Responsive Design",
-        "Contact Form",
-        "Fast Loading",
-        "Dll",
-      ],
+      icon: <PanelsTopLeft />,
+      title: "Landing Page",
+      desc: "Situs web khusus yang memukau dan memunculkan potensi bisnis Anda dengan desain yang menarik.",
     },
     {
-      heading: "blog/news",
-      desc: "Platform blog atau portal berita profesional",
-      price: "Rp 4.000.000 - Rp 10.000.000",
-      features: [
-        "CMS Integration",
-        "Article Management",
-        "Category & Tags",
-        "Comment System",
-        "Custom Dashboard",
-        "Dll",
-      ],
+      icon: <Newspaper />,
+      title: "Blog",
+      desc: "Situs web blog profesional yang memperkenalkan konten Anda secara visual dan interaktif.",
     },
     {
-      heading: "portofolio",
-      desc: "Website portofolio untuk showcase karya Anda",
-      price: "Rp 1.000.000 - Rp 5.000.000",
-      features: [
-        "Gallery Custom",
-        "Project Showcase",
-        "Contact Form",
-        "Filtering Options",
-        "Lightbox View",
-        "Dll",
-      ],
+      icon: <BookImage />,
+      title: "Portfolio",
+      desc: "Situs web portfolio profesional yang memperkenalkan karya Anda secara visual dan interaktif.",
     },
     {
-      heading: "custom website",
-      desc: "Solusi website khusus untuk kebutuhan Anda",
-      price: "Mulai dari Rp 6.000.000",
-      features: [
-        "Full Customization",
-        "Unlimited Features",
-        "Maintance & Support",
-        "Custom Dashboard",
-        "Payment Gateway",
-        "Dll",
-      ],
+      icon: <ChevronsLeftRight />,
+      title: "Custom Website",
+      desc: "Situs web khusus yang memukau dan memunculkan potensi bisnis Anda dengan desain yang menarik.",
     },
   ];
+
   return (
-    <div className="pt-28 max-w-[80%] mx-auto" id="layanan">
-      <header>
-        <Heading title="Layanan Kami" />
-        <p
-          className="font-roboto pb-10 text-lg lg:text-xl font-thin text-desc leading-8"
-          data-aos="fade-left"
-          data-aos-duration="1000"
-          data-aos-delay="400"
-        >
-          Pilihan lengkap solusi website untuk berbagai kebutuhan bisnis Anda
-        </p>
+    <div
+      className="bg-main py-10 px-4 md:px-10 lg:px-10 2xl:px-32"
+      id="service"
+    >
+      <header className="mx-4">
+        <Heading
+          title="Apa yang Kami Tawarkan"
+          desc1="Layanan pengembangan web komprehensif untuk mewujudkan visi Anda"
+          section="Layanan Kami"
+          bgColor="bg-[#cfe0f7]"
+          textColor="text-blue-600"
+        />
       </header>
       <section>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {listLayanan.map((item) => (
-            <div data-aos="fade-up" data-aos-duration="1000">
-              <Card height="h-full">
-                <h2 className="card-title text-3xl font-poppins uppercase text-main">
-                  {item.heading}
-                </h2>
-                <p className="font-roboto text-desc pb-4 mt-2">{item.desc}</p>
-                <p className="font-roboto md:text-xl border-main/20 border-y-2 text-main leading-8 font-bold">
-                  {item.price}
-                </p>
-                <div className="flex flex-col gap-2 mt-4">
-                  {item.features.map((feature, index) => (
-                    <div key={index} className="flex items-center">
-                      <Check className="mr-2 text-main" />
-                      <span className="text-slate-300">{feature}</span>
-                    </div>
-                  ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 place-items-center mt-10">
+          {listService.map((item, index) => (
+            <div
+              key={index}
+              className="bg-white p-6 rounded-lg shadow-sm w-[350px] md:w-[350px] md:h-[300px] lg:w-[380px] 2xl:w-[500px] transition-all ease-in-out duration-500 hover:shadow-xl mx-auto group cursor-pointer border hover:border hover:border-blue-400"
+              data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+            >
+              <div className="flex flex-col mb-4">
+                <div className="bg-gradient px-4 w-fit py-4 rounded-xl mb-4  group-hover:scale-110 transition-all ease-in-out duration-500">
+                  {item.icon}
                 </div>
-              </Card>
+                <h2 className="text-lg font-semibold text-black font-roboto group-hover:text-blue-600 transition-all ease-in-out duration-500">
+                  {item.title}
+                </h2>
+              </div>
+              <p className="text-gray-600 mb-4 font-roboto">{item.desc}</p>
+              <Link
+                className="text-blue-500 flex gap-2 hover:text-blue-700 w-fit font-roboto group-hover:transform group-hover:translate-x-1 transition-all ease-in-out duration-500"
+                to={"#"}
+              >
+                <span>Learn More</span>
+                <span>
+                  <ArrowRight />
+                </span>
+              </Link>
             </div>
           ))}
         </div>

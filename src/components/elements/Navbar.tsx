@@ -1,11 +1,23 @@
-import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import useScrollStore from "../../store/scrollStore";
+import { ChevronsLeftRight } from "lucide-react";
+
 
 const Navbar: React.FC = () => {
   const isScrolled = useScrollStore((state) => state.isScrolling);
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
+
+  const listMenu: string[] = [
+    "About",
+    "Service",
+    "Portofolio",
+    "Contact",
+  ]
+
+  const handleClick = () => {
+    setIsOpen(false);
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,70 +41,37 @@ const Navbar: React.FC = () => {
   return (
     <>
       <nav
-        className={`w-full flex justify-between items-center py-6 px-4 lg:px-42 transition-all ease-in-out duration-500 fixed top-0 left-0 right-0 z-50 ${
-          isScrolled ? "bg-body/70 backdrop-blur shadow-lg" : "bg-body"
+        className={`w-full flex justify-between items-center py-4 px-4 md:py-6 md:px-20 lg:px-42 fixed top-0 left-0 right-0 z-50 shadow-sm ${
+          isScrolled ? "bg-body shadow-md" : "bg-body"
         }`}
       >
         {/* Logo */}
-        <h1 className="text-main text-2xl font-extrabold font-poppins">
-          ArahMimpi Digital
-        </h1>
+        <div className="flex items-center gap-2">
+          <span className="bg-gradient px-2 py-2 rounded-lg">
+            <ChevronsLeftRight />
+          </span>
+          <h1 className="bg-linear-to-r from-[#239AE7] to-[#10ABDA] bg-clip-text text-transparent text-xl font-semibold font-poppins">
+            FoundryWeb
+          </h1>
+        </div>
 
         {/* Desktop menu */}
         <div className="hidden md:flex items-center gap-6">
-          <ul className="flex text-main font-poppins font-semibold md:gap-2 lg:gap-6 text-lg">
-            <li>
-              <Link
-                to="/"
-                className="relative hover:text-main/70 before:content-[''] before:absolute before:left-0 before:bottom-0 before:h-0.5 before:w-0 before:bg-main before:transition-all before:duration-300 hover:before:w-full"
-                onClick={() => {
-                  window.scrollTo({ top: 0, behavior: "smooth" });
-                }}
-              >
-                Beranda
-              </Link>
-            </li>
-            <li>
-              <a
-                href="#tentang"
-                className="relative hover:text-main/70 before:content-[''] before:absolute before:left-0 before:bottom-0 before:h-0.5 before:w-0 before:bg-main before:transition-all before:duration-300 hover:before:w-full"
-              >
-                Tentang
-              </a>
-            </li>
-            <li>
-              <a
-                href="#layanan"
-                className="relative hover:text-main/70 before:content-[''] before:absolute before:left-0 before:bottom-0 before:h-0.5 before:w-0 before:bg-main before:transition-all before:duration-300 hover:before:w-full"
-              >
-                Layanan
-              </a>
-            </li>
-            <li>
-              <a
-                href="#portofolio"
-                className="relative hover:text-main/70 before:content-[''] before:absolute before:left-0 before:bottom-0 before:h-0.5 before:w-0 before:bg-main before:transition-all before:duration-300 hover:before:w-full"
-              >
-                Portofolio
-              </a>
-            </li>
-            <li>
-              <a
-                href="#kontak"
-                className="relative hover:text-main/70 before:content-[''] before:absolute before:left-0 before:bottom-0 before:h-0.5 before:w-0 before:bg-main before:transition-all before:duration-300 hover:before:w-full"
-              >
-                Kontak
-              </a>
-            </li>
+          <ul className="flex items-center text-main/60 font-roboto md:gap-6 text-lg">
+            {listMenu.map((item, index) => (
+              <li className="hover:text-sky-500 transition-colors ease-linear duration-300 text-desc" key={index}>
+                <a href={`#${item.toLowerCase()}`}>{item}</a>
+              </li>
+            ))}
+            <button className="bg-linear-to-r from-[#2070E7] via-[#239AE7] to-[#10ABDA] px-4 py-2 text-white text-sm transition-colors ease-in-out duration-300 rounded-lg cursor-pointer hover:bg-linear-to-r hover:from-[#1c63ce] hover:via-[#1f87cd] hover:to-[#0e95be]">
+              <p>Get Started</p>
+            </button>
           </ul>
-        </div>
-        <div className="hidden md:block bg-main text-center px-6 py-3 font-poppins rounded-full text-body uppercase cursor-pointer font-semibold hover:bg-main/70 transition-all duration-300 ease-in-out text-sm">
-          <Link to="/kontak">Hubungi Kami</Link>
         </div>
 
         {/* Mobile button */}
         <button
-          className="md:hidden text-main z-60"
+          className="md:hidden text-slate-900 z-60"
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
@@ -147,39 +126,15 @@ const Navbar: React.FC = () => {
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <ul className="flex flex-col gap-6 p-8 text-main font-poppins font-semibold text-lg">
-          <Link
-            to="/"
-            onClick={() => {
-              toggleMenu();
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
-          >
-            Beranda
-          </Link>
-
-          {/* Ganti Link dengan <a> untuk hash navigation */}
-          <a href="#tentang" onClick={toggleMenu} className="cursor-pointer">
-            Tentang
-          </a>
-
-          <a href="#layanan" onClick={toggleMenu} className="cursor-pointer">
-            Layanan
-          </a>
-
-          <a href="#portofolio" onClick={toggleMenu} className="cursor-pointer">
-            Portofolio
-          </a>
-
-          <a href="#kontak" onClick={toggleMenu} className="cursor-pointer">
-            Kontak
-          </a>
-
-          <div className="bg-main px-6 py-3 text-center rounded-full text-body uppercase font-semibold hover:bg-main/70 transition-all">
-            <Link to="/kontak" onClick={toggleMenu}>
-              Hubungi Kami
-            </Link>
-          </div>
+        <ul className="flex flex-col gap-6 p-8 text-desc font-roboto font-extralight text-lg">
+          {listMenu.map((item, index) => (
+            <li key={index} onClick={handleClick}>
+              <a href={`#${item.toLowerCase()}`}>{item}</a>
+            </li>
+          ))}
+          <button className="bg-gradient px-4 py-2 text-white text-sm rounded-lg">
+            <p>Get Started</p>
+          </button>
         </ul>
       </div>
     </>
