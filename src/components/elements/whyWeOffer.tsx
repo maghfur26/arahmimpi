@@ -1,9 +1,8 @@
-import Heading from "./Heading"
 
 const whyWeOffer = () => {
   return (
     <div>
-        
+
     </div>
   )
 }
