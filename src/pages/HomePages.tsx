@@ -3,10 +3,11 @@ import About from "../components/elements/About";
 import ArrowScroll from "../components/elements/ArrowScroll";
 import Layanan from "../components/elements/Layanan";
 import Testimoni from "../components/elements/Testimoni";
+import Contact from "../components/elements/Contact";
 
 const HomePages: React.FC = () => {
   return (
-    <div className="overflow-hidden relative " >
+    <div className="overflow-hidden relative ">
       <section>
         <Hero />
       </section>
@@ -21,6 +22,9 @@ const HomePages: React.FC = () => {
       </section>
       <section>
         <ArrowScroll />
+      </section>
+      <section>
+        <Contact />
       </section>
     </div>
   );

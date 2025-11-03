@@ -2,7 +2,7 @@ import Heading from "./Heading";
 
 const About = () => {
   return (
-    <div className="max-w-[80%] mx-auto pt-27" id="about">
+    <div className="max-w-[80%] mx-auto pt-27 md:pb-26" id="about">
       <section className="flex justify-center flex-col items-center mb-18">
         <Heading
           section="Tentang Kami"

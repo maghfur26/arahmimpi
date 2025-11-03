@@ -31,7 +31,7 @@ const WhyWeOffer = () => {
     },
   ];
   return (
-    <div>
+    <div className="mx-4">
       <section className="mt-10 md:mt-24 flex justify-center flex-col items-center mb-18">
         <Heading
           section="Mengapa Pilih Kami"
@@ -53,7 +53,7 @@ const WhyWeOffer = () => {
               <div className="bg-gradient w-15 h-15 flex justify-center items-center rounded-full">
                 {item.icon}
               </div>
-              <h1 className="font-poppins text-2xl lg:text-lg 2xl:text-2xl font-semibold text-black">
+              <h1 className="font-poppins text-xl lg:text-lg 2xl:text-2xl font-semibold text-black">
                 {item.title}
               </h1>
             </div>

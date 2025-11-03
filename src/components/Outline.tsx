@@ -1,5 +1,6 @@
 import Navbar from "./elements/Navbar";
 import { Outlet } from "react-router-dom";
+import Footer from "./elements/Footer";
 
 const Outline: React.FC = () => {
   return (
@@ -7,9 +8,12 @@ const Outline: React.FC = () => {
       <header>
         <Navbar />
       </header>
-      <main className="pt-18 md:pt-18 pb-6">
+      <main className="pt-18 md:pt-18">
         <Outlet />
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 };

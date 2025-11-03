@@ -64,7 +64,7 @@ const Navbar: React.FC = () => {
               </li>
             ))}
             <button className="bg-linear-to-r from-[#2070E7] via-[#239AE7] to-[#10ABDA] px-4 py-2 text-white text-sm transition-colors ease-in-out duration-300 rounded-lg cursor-pointer hover:bg-linear-to-r hover:from-[#1c63ce] hover:via-[#1f87cd] hover:to-[#0e95be]">
-              <p>Get Started</p>
+              <a href="#about">Get Started</a>
             </button>
           </ul>
         </div>
@@ -132,8 +132,8 @@ const Navbar: React.FC = () => {
               <a href={`#${item.toLowerCase()}`}>{item}</a>
             </li>
           ))}
-          <button className="bg-gradient px-4 py-2 text-white text-sm rounded-lg">
-            <p>Get Started</p>
+          <button className="bg-gradient px-4 py-2 text-white text-sm rounded-lg" onClick={handleClick}>
+            <a href="#about">Get Started</a>
           </button>
         </ul>
       </div>

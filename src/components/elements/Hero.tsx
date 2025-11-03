@@ -46,7 +46,7 @@ const Hero = () => {
             className="flex flex-wrap gap-4"
           >
             <button className="bg-linear-to-r from-[#239AE7] to-[#10ABDA] px-6 py-3 text-white rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center gap-2 shadow-md shadow-slate-400 cursor-pointer font-roboto">
-              <span>Start Your Project</span>
+              <a href="#contact">Start Your Project</a>
               <ArrowRightIcon size={18} />
             </button>
             <button className="border border-[#239AE7] text-black rounded-lg px-6 py-2 transition-all duration-300 font-roboto cursor-pointer hover:bg-blue text-sm hover:text-slate-800">

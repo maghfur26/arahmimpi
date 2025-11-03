@@ -52,12 +52,9 @@ const Layanan: React.FC = () => {
   ];
 
   return (
-    <div
-      className="bg-main py-10 px-4 md:px-10 lg:px-10 2xl:px-32"
-      id="service"
-    >
-      <div>
-        <header className="mx-4">
+    <div className="bg-main py-10" id="service">
+      <div className="max-w-7xl mx-auto px-8 md:px-6 lg:px-8">
+        <header>
           <Heading
             title="Apa Yang Kami Tawarkan"
             desc1="Layanan pengembangan web komprehensif untuk mewujudkan visi Anda"
@@ -66,16 +63,17 @@ const Layanan: React.FC = () => {
             textColor="text-blue-600"
           />
         </header>
-        <section>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 place-items-center mt-4">
+        
+        <section className="mt-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {listService.map((item, index) => (
               <div
                 key={index}
-                className="bg-white p-6 rounded-lg shadow-sm w-[350px] md:w-[350px] md:h-[300px] lg:w-[380px] 2xl:w-[500px] transition-all ease-in-out duration-500 hover:shadow-xl mx-auto group cursor-pointer border hover:border-2 hover:border-blue-400"
+                className="bg-white p-6 rounded-lg shadow-sm transition-all ease-in-out duration-500 hover:shadow-xl group cursor-pointer border hover:border-2 hover:border-blue-400"
                 data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
               >
                 <div className="flex flex-col mb-4">
-                  <div className="bg-gradient px-4 w-fit py-4 rounded-xl mb-4  group-hover:scale-110 transition-all ease-in-out duration-500">
+                  <div className="bg-gradient px-4 w-fit py-4 rounded-xl mb-4 group-hover:scale-110 transition-all ease-in-out duration-500">
                     {item.icon}
                   </div>
                   <h2 className="text-lg font-semibold text-black font-roboto group-hover:text-blue-600 transition-all ease-in-out duration-500">
@@ -97,7 +95,8 @@ const Layanan: React.FC = () => {
           </div>
         </section>
       </div>
-      <div className="mt-20">
+
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 mt-20">
         <WhyWeOffer />
       </div>
     </div>

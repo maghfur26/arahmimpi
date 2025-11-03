@@ -39,7 +39,7 @@ const Testimoni = () => {
   ];
 
   return (
-    <div className="pb-20">
+    <div className="pb-20 mx-4">
       <section className="mt-32 mb-10" id="testimoni">
         <Heading
           section="Testimoni"
