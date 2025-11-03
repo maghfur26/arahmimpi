@@ -22,7 +22,7 @@ const Contact = () => {
     {
       icon: <MapPinIcon />,
       title: "Alamat",
-      desc: "Jl. Contoh, Kota Contoh, Negara Contoh",
+      desc: "Pemalang, Jawa Tengah, Indonesia",
     },
   ];
 
