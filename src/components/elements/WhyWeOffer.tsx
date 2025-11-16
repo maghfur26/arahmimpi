@@ -53,7 +53,7 @@ const WhyWeOffer = () => {
               <div className="bg-gradient w-15 h-15 flex justify-center items-center rounded-full">
                 {item.icon}
               </div>
-              <h1 className="font-poppins text-xl lg:text-lg 2xl:text-2xl font-semibold text-black">
+              <h1 className="font-poppins text-xl lg:text-lg 2xl:text-2xl font-semibold text-black text-center">
                 {item.title}
               </h1>
             </div>
