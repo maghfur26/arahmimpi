@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import useScrollStore from "../../store/scrollStore";
-import { ChevronsLeftRight } from "lucide-react";
 import logo from "../../assets/images/logo.png"
 
 
