@@ -28,7 +28,7 @@ const Contact = () => {
 
   return (
     <div
-      className="bg-linear-to-tl from-main to-transparent py-20 md:py-32 px-8 relative overflow-hidden"
+      className="bg-linear-to-tl from-main from-40% to-body to-90% py-20 md:py-32 px-8 relative overflow-hidden"
       id="contact"
     >
       {/* Decorative Elements */}

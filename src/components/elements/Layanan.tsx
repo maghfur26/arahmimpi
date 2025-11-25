@@ -52,7 +52,7 @@ const Layanan: React.FC = () => {
   ];
 
   return (
-    <div className="bg-linear-to-b from-white from-1% via-[#cfe0f7] via-70% to-white py-10" id="service">
+    <div className="bg-linear-to-b from-main from-80% to-body py-10" id="service">
       <div className="max-w-7xl mx-auto px-8 md:px-6 lg:px-8">
         <header>
           <Heading

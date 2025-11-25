@@ -1,23 +1,34 @@
 import { useEffect, useState } from "react";
 import useScrollStore from "../../store/scrollStore";
-import logo from "../../assets/images/logo.png"
-
+import logo from "../../assets/images/logo.png";
+import { useNavigate } from "react-router-dom";
 
 const Navbar: React.FC = () => {
+  const navigate = useNavigate();
   const isScrolled = useScrollStore((state) => state.isScrolling);
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  const listMenu: string[] = [
-    "About",
-    "Service",
-    "Portofolio",
-    "Contact",
-  ]
+  const listMenu: string[] = ["About", "Service", "Portofolio", "Contact"];
 
-  const handleClick = () => {
+  const scrollToSection = (sectionId: string) => {
+    // Tutup mobile menu
     setIsOpen(false);
-  }
+    
+    // Update url dengan query parameter
+    navigate(`/?section=${sectionId}`, { replace: true });
+
+    // Scroll ke section
+    setTimeout(() => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }, 100);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,25 +58,26 @@ const Navbar: React.FC = () => {
       >
         {/* Logo */}
         <div className="flex items-center gap-2">
-          {/* <span className="bg-gradient px-2 py-2 rounded-lg">
-            <ChevronsLeftRight />
-          </span>
-          <h1 className="bg-linear-to-r from-[#239AE7] to-[#10ABDA] bg-clip-text text-transparent text-xl font-semibold font-poppins">
-            FoundryWeb
-          </h1> */}
-          <img src={logo} alt="FoundryWeb Logo" className="h-10 w-auto"/>
+          <img src={logo} alt="FoundryWeb Logo" className="h-10 w-auto" />
         </div>
 
         {/* Desktop menu */}
         <div className="hidden md:flex items-center gap-6">
           <ul className="flex items-center text-main/60 font-roboto md:gap-6 text-lg">
             {listMenu.map((item, index) => (
-              <li className="hover:text-sky-500 transition-colors ease-linear duration-300 text-desc" key={index}>
-                <a href={`#${item.toLowerCase()}`}>{item}</a>
+              <li
+                className="hover:text-sky-500 transition-colors ease-linear duration-300 text-desc cursor-pointer"
+                key={index}
+                onClick={() => scrollToSection(item.toLowerCase())}
+              >
+                {item}
               </li>
             ))}
-            <button className="bg-linear-to-r from-[#2070E7] via-[#239AE7] to-[#10ABDA] px-4 py-2 text-white text-sm transition-colors ease-in-out duration-300 rounded-lg cursor-pointer hover:bg-linear-to-r hover:from-[#1c63ce] hover:via-[#1f87cd] hover:to-[#0e95be]">
-              <a href="#about">Get Started</a>
+            <button 
+              className="bg-linear-to-r from-[#2070E7] via-[#239AE7] to-[#10ABDA] px-4 py-2 text-white text-sm transition-colors ease-in-out duration-300 rounded-lg cursor-pointer hover:bg-linear-to-r hover:from-[#1c63ce] hover:via-[#1f87cd] hover:to-[#0e95be]"
+              onClick={() => scrollToSection('about')}
+            >
+              Get Started
             </button>
           </ul>
         </div>
@@ -129,12 +141,19 @@ const Navbar: React.FC = () => {
       >
         <ul className="flex flex-col gap-6 p-8 text-desc font-roboto font-extralight text-lg">
           {listMenu.map((item, index) => (
-            <li key={index} onClick={handleClick}>
-              <a href={`#${item.toLowerCase()}`}>{item}</a>
+            <li 
+              key={index} 
+              onClick={() => scrollToSection(item.toLowerCase())}
+              className="cursor-pointer hover:text-sky-500 transition-colors"
+            >
+              {item}
             </li>
           ))}
-          <button className="bg-gradient px-4 py-2 text-white text-sm rounded-lg" onClick={handleClick}>
-            <a href="#about">Get Started</a>
+          <button
+            className="bg-gradient px-4 py-2 text-white text-sm rounded-lg"
+            onClick={() => scrollToSection('about')}
+          >
+            Get Started
           </button>
         </ul>
       </div>

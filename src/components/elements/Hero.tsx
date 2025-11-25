@@ -4,7 +4,7 @@ import { ArrowRightIcon } from "lucide-react";
 const Hero = () => {
 
   return (
-    <div className="px-4 md:px-10 lg:px-10 2xl:px-32 flex justify-center flex-wrap w-full min-h-[75dvh] bg-linear-to-b from-main from-80% to-white pb-10 pt-10 gap-8 items-center">
+    <div className="px-4 md:px-10 lg:px-10 2xl:px-32 flex justify-center flex-wrap w-full min-h-[75dvh] bg-linear-to-b from-main from-80% to-body pb-10 pt-10 gap-8 items-center">
       {/* Content Section */}
       <section className="flex-1 min-w-[300px] lg:min-w-[350px]">
         <div className="space-y-4 mb-8">
@@ -64,7 +64,7 @@ const Hero = () => {
           className="w-full max-w-md md:max-w-lg lg:max-w-xl 2xl:max-w-2xl"
         >
           <img
-            className="w-full h-auto object-cover rounded-2xl shadow-2xl"
+            className="w-full h-auto object-cover rounded-2xl"
             src={heroimg}
             alt="Hero showcase"
           />

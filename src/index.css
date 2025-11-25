@@ -114,6 +114,7 @@ html {
   );
 }
 
+
 @keyframes scrollLeft {
   0% {
     transform: translateX(0);
