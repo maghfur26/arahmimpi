@@ -35,14 +35,13 @@ const CardQuote = ({
   const renderCard = (user: TestimonialUser, key: string) => (
     <div
       key={key}
-      className="testimonial-card bg-white rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl shrink-0"
-      style={{ width: "350px" }}
+      className="testimonial-card bg-white rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl shrink-0 w-[20rem]"
     >
       <div className="flex items-start justify-between mb-6">
         {/* Avatar & User Info */}
         <div className="flex gap-6 items-start">
           <div className="avatar-gradient relative shrink-0">
-            <div className="w-20 h-20 rounded-full overflow-hidden bg-white">
+            <div className="w-12 h-12 md:w-20 md:h-20 rounded-full overflow-hidden bg-white">
               <img
                 src={user.avatar}
                 alt={user.name}
@@ -52,7 +51,7 @@ const CardQuote = ({
           </div>
 
           <div>
-            <h4 className="font-bold text-gray-900 text-xl" title={user.name}>
+            <h4 className="font-bold text-gray-900 text-md md:text-xl" title={user.name}>
               {truncateName(user.name)}
             </h4>
             <p className="text-cyan-600 font-medium text-sm">{user.job}</p>
@@ -63,8 +62,8 @@ const CardQuote = ({
         {/* Quote Icon */}
         {showQuoteIcon && (
           <div className="animate-bounce shrink-0 ml-4">
-            <div className="bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-full p-3 shadow-lg">
-              <Quote className="text-white w-6 h-6" />
+            <div className="bg-linear-to-br from-cyan-400 to-cyan-600 rounded-full p-3 shadow-lg">
+              <Quote className="text-white w-4 h-4 md:w-6 md:h-6" />
             </div>
           </div>
         )}
@@ -101,7 +100,7 @@ const CardQuote = ({
       </div>
 
       {/* Baris 2 - Scroll ke Kanan */}
-      <div className="scroll-container">
+      <div className="scroll-container hidden md:block">
         <div className="scroll-content scroll-right">
           {users.map((user, index) => renderCard(user, `row2-${index}`))}
           {/* Duplicate untuk seamless loop */}

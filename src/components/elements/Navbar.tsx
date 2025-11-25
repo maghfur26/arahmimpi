@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import useScrollStore from "../../store/scrollStore";
 import { ChevronsLeftRight } from "lucide-react";
+import logo from "../../assets/images/logo.png"
 
 
 const Navbar: React.FC = () => {
@@ -41,18 +42,19 @@ const Navbar: React.FC = () => {
   return (
     <>
       <nav
-        className={`w-full flex justify-between items-center py-4 px-4 md:py-6 md:px-20 lg:px-42 fixed top-0 left-0 right-0 z-50 shadow-sm ${
+        className={`w-full flex justify-between items-center py-4 px-4 md:py-6 md:px-20 lg:px-42 fixed top-0 left-0 right-0 z-50 ${
           isScrolled ? "bg-body/70 backdrop-blur-xl shadow-md" : "bg-body"
         }`}
       >
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <span className="bg-gradient px-2 py-2 rounded-lg">
+          {/* <span className="bg-gradient px-2 py-2 rounded-lg">
             <ChevronsLeftRight />
           </span>
           <h1 className="bg-linear-to-r from-[#239AE7] to-[#10ABDA] bg-clip-text text-transparent text-xl font-semibold font-poppins">
             FoundryWeb
-          </h1>
+          </h1> */}
+          <img src={logo} alt="FoundryWeb Logo" className="h-10 w-auto"/>
         </div>
 
         {/* Desktop menu */}

@@ -52,7 +52,7 @@ const Layanan: React.FC = () => {
   ];
 
   return (
-    <div className="bg-main py-10" id="service">
+    <div className="bg-linear-to-b from-white from-1% via-[#cfe0f7] via-70% to-white py-10" id="service">
       <div className="max-w-7xl mx-auto px-8 md:px-6 lg:px-8">
         <header>
           <Heading
@@ -69,7 +69,7 @@ const Layanan: React.FC = () => {
             {listService.map((item, index) => (
               <div
                 key={index}
-                className="bg-white p-6 rounded-lg shadow-sm transition-all ease-in-out duration-500 hover:shadow-xl group cursor-pointer border hover:border-2 hover:border-blue-400"
+                className="glass-card p-6 rounded-lg shadow-sm transition-all ease-in-out duration-500 hover:shadow-xl group cursor-pointer border hover:border-2 hover:border-blue-400"
                 data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
               >
                 <div className="flex flex-col mb-4">

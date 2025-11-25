@@ -44,7 +44,7 @@ const WhyWeOffer = () => {
         {listPriority.map((item, index) => (
           <div
             key={index}
-            className="flex justify-center flex-col items-center bg-[#F8FDFF] p-6"
+            className="flex justify-center flex-col items-center glass-card p-6"
             data-aos="fade-up"
             data-aos-duration="1500"
             data-aos-delay={index * 100}

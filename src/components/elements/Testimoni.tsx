@@ -49,7 +49,7 @@ const Testimoni = () => {
           desc1="Jangan hanya percaya pada kata-kata kami - dengarkan beberapa klien kami yang puas"
         />
       </section>
-      <section className="mx-auto max-w-7xl overflow-hidden">
+      <section className="mx-auto max-w-7xl overflow-hidden" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
         <CardQuote users={dataUser} />
       </section>
     </div>
