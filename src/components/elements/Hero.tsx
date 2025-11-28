@@ -1,5 +1,6 @@
 import heroimg from "../../assets/images/hero.jpg";
 import { ArrowRightIcon } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
 
@@ -50,7 +51,7 @@ const Hero = () => {
               <ArrowRightIcon size={18} />
             </button>
             <button className="border border-[#239AE7] text-black rounded-lg px-6 py-2 transition-all duration-300 font-roboto cursor-pointer hover:bg-blue text-sm hover:text-slate-800">
-              View Portofolio
+              <Link to="/?section=services">Learn More</Link>
             </button>
           </div>
         </div>

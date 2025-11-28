@@ -9,7 +9,7 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  const listMenu: string[] = ["About", "Service", "Portofolio", "Contact"];
+  const listMenu: string[] = ["About", "Services", "Contact"];
 
   const scrollToSection = (sectionId: string) => {
     // Tutup mobile menu

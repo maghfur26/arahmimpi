@@ -26,6 +26,19 @@ const Contact = () => {
     },
   ];
 
+  const handleClick = (type: string, value: string) => {
+    try {
+      if (type === "Email") {
+        window.location.href = `mailto:${value}`;
+      } else if (type === "Whatsapp") {
+        const phoneNumber = value.replace(/\D/g, "");
+        window.open(`https://wa.me/${phoneNumber}`, "_blank");
+      }
+    } catch (error) {
+      console.log("Error", error);
+    }
+  };
+
   return (
     <div
       className="bg-linear-to-tl from-main from-40% to-body to-90% py-20 md:py-32 px-8 relative overflow-hidden"
@@ -55,7 +68,8 @@ const Contact = () => {
               key={index}
               data-aos="zoom-in"
               data-aos-delay={index * 150}
-              className="relative group"
+              className="relative group cursor-pointer"
+              onClick={() => handleClick(item.title, item.desc)}
             >
               {/* Card Background with Gradient Border Effect */}
               <div className="absolute -inset-0.5 bg-gradient rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur"></div>

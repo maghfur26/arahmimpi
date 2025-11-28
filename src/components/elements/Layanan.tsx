@@ -15,6 +15,7 @@ interface ListService {
   icon: React.ReactNode;
   title: string;
   desc: string;
+  slug: string;
 }
 
 const Layanan: React.FC = () => {
@@ -23,36 +24,42 @@ const Layanan: React.FC = () => {
       icon: <Building />,
       title: "Company Profile",
       desc: "Situs web perusahaan profesional yang membangun kehadiran digital merek Anda dengan desain elegan dan konten yang menarik.",
+      slug: "company-profile"
     },
     {
       icon: <ShoppingCart />,
       title: "E-Commerce",
       desc: "Platform e-commerce tangguh yang membantu bisnis Anda berkembang dengan cepat dan memperluas pasar.",
+      slug: "e-commerce"
     },
     {
       icon: <PanelsTopLeft />,
       title: "Landing Page",
       desc: "Situs web khusus yang memukau dan memunculkan potensi bisnis Anda dengan desain yang menarik.",
+      slug: "landing-page"
     },
     {
       icon: <Newspaper />,
       title: "Blog",
       desc: "Situs web blog profesional yang memperkenalkan konten Anda secara visual dan interaktif.",
+      slug: "blog"
     },
     {
       icon: <BookImage />,
       title: "Portfolio",
       desc: "Situs web portfolio profesional yang memperkenalkan karya Anda secara visual dan interaktif.",
+      slug: "portfolio"
     },
     {
       icon: <ChevronsLeftRight />,
       title: "Custom Website",
       desc: "Situs web khusus yang memukau dan memunculkan potensi bisnis Anda dengan desain yang menarik.",
+      slug: "custom-website"
     },
   ];
 
   return (
-    <div className="bg-linear-to-b from-main from-80% to-body py-10" id="service">
+    <div className="bg-linear-to-b from-main from-80% to-body py-10" id="services">
       <div className="max-w-7xl mx-auto px-8 md:px-6 lg:px-8">
         <header>
           <Heading
@@ -67,8 +74,9 @@ const Layanan: React.FC = () => {
         <section className="mt-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {listService.map((item, index) => (
-              <div
+              <Link
                 key={index}
+                to={`/layanan/${item.slug}`}
                 className="glass-card p-6 rounded-lg shadow-sm transition-all ease-in-out duration-500 hover:shadow-xl group cursor-pointer border hover:border-2 hover:border-blue-400"
                 data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
               >
@@ -81,16 +89,13 @@ const Layanan: React.FC = () => {
                   </h2>
                 </div>
                 <p className="text-gray-600 mb-4 font-roboto">{item.desc}</p>
-                <Link
-                  className="text-blue-500 flex gap-2 hover:text-blue-700 w-fit font-roboto group-hover:transform group-hover:translate-x-1 transition-all ease-in-out duration-500"
-                  to={"#"}
-                >
+                <div className="text-blue-500 flex gap-2 hover:text-blue-700 w-fit font-roboto group-hover:transform group-hover:translate-x-1 transition-all ease-in-out duration-500">
                   <span>Learn More</span>
                   <span>
                     <ArrowRight />
                   </span>
-                </Link>
-              </div>
+                </div>
+              </Link>
             ))}
           </div>
         </section>
